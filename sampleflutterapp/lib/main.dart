@@ -32,6 +32,17 @@ class AppHome extends StatelessWidget {
         onPressed: () {},
         child: Icon(Icons.shopping_cart),
       ),
+      body: Padding(padding: EdgeInsets.all(20.0),
+      child: ListView(
+        children: [
+          Text('Heading'),
+          Text('subHeading'),
+          Text('paragraph'),
+          ElevatedButton(onPressed: (){}, child: Text("elevated button")),
+          OutlinedButton(onPressed: (){}, child: Text("outlined button")),
+        ],
+      ),
+      ),
     );
   }
 }
