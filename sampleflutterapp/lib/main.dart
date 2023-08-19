@@ -13,7 +13,7 @@ class App extends StatelessWidget {
     return  MaterialApp(
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       home: AppHome(),
     );
   }
