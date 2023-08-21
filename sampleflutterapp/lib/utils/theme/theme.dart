@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../constant/color.dart';
+
 class TAppTheme {
   static ThemeData lightTheme =
       ThemeData(
         brightness: Brightness.light,
         textTheme: TextTheme(
-          displayMedium: GoogleFonts.montserrat(
-            color: Colors.black87,
+          headlineSmall: GoogleFonts.inter(
+            color: lightTextPrimary,
           ),
           titleSmall:  GoogleFonts.poppins(
             color: Colors.black54,
