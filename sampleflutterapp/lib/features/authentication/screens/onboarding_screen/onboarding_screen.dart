@@ -9,10 +9,16 @@ import 'package:sampleflutterapp/features/authentication/models/model_onboarding
 import 'package:sampleflutterapp/features/authentication/screens/onboarding_screen/onboarding_page_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingScreen extends StatefulWidget {
   OnBoardingScreen({super.key});
 
+  @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final controller = LiquidController();
+
   int currentPage = 0;
 
   @override
@@ -114,6 +120,9 @@ class OnBoardingScreen extends StatelessWidget {
   }
 
   void onPageChangeCallback(int activePageIndex) {
-    currentPage = activePageIndex;
+    setState(() {
+      currentPage = activePageIndex;
+    });
+    
   }
 }
