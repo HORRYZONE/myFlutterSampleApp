@@ -63,7 +63,10 @@ class OnBoardingScreen extends StatelessWidget {
           Positioned(
             bottom: 60.0,
             child: OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                int nextPage = controller.currentPage + 1;
+                controller.animateToPage(page: nextPage);
+              },
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 side: const BorderSide(color: Colors.black26),
