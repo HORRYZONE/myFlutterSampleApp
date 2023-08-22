@@ -41,17 +41,11 @@ class SplashScreen extends StatelessWidget {
                   children: [
                     Text(
                       tAppName,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineSmall
-                          ?.copyWith(fontWeight: FontWeight.w400),
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                     Text(
                       tAppTagline,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineSmall
-                          ?.copyWith(fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.labelLarge,
                     ),
                   ],
                 ),
@@ -64,9 +58,9 @@ class SplashScreen extends StatelessWidget {
               bottom: splashController.animate.value ? 210 : 0,
               left: tDefaultSize,
               child: AnimatedOpacity(
-                duration: Duration(milliseconds: 1600),
-                opacity: splashController.animate.value ? 1 : 0,
-                child: SvgPicture.asset(tSplashImage)),
+                  duration: Duration(milliseconds: 1600),
+                  opacity: splashController.animate.value ? 1 : 0,
+                  child: SvgPicture.asset(tSplashImage)),
             ),
           ),
           Obx(
