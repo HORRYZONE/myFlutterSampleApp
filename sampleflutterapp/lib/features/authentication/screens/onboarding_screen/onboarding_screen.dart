@@ -5,6 +5,7 @@ import 'package:sampleflutterapp/constant/color.dart';
 import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
+import 'package:sampleflutterapp/features/authentication/models/model_onboarding.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -33,40 +34,4 @@ class OnBoardingScreen extends StatelessWidget {
   }
 }
 
-class onBoardingPage extends StatelessWidget {
-  const onBoardingPage({
-    super.key,
-    required this.size,
-  });
 
-  final Size size;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(tDefaultSize),
-      color: tOnBoardingPage1Color,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          SvgPicture.asset(tOnboardingImage1, height: size.height * 0.5,),    //set height of image to 50% of screen
-          Column(
-            children: [
-              Text(
-                tOnboardingTitle1,
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              Text(
-                tOnboardingSubTitle1,
-                style: Theme.of(context).textTheme.labelMedium,
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-          Text(tOnboardingCounter1, style: Theme.of(context).textTheme.titleMedium,),
-          SizedBox(height: 50.0,)
-        ],
-      ),
-    );
-  }
-}
