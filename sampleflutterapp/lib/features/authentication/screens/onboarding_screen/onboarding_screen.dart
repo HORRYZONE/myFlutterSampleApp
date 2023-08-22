@@ -18,31 +18,7 @@ class OnBoardingScreen extends StatelessWidget {
         children: [
           LiquidSwipe(
             pages: [
-              Container(
-                padding: EdgeInsets.all(tDefaultSize),
-                color: tOnBoardingPage1Color,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SvgPicture.asset(tOnboardingImage1, height: size.height * 0.5,),    //set height of image to 50% of screen
-                    Column(
-                      children: [
-                        Text(
-                          tOnboardingTitle1,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        Text(
-                          tOnboardingSubTitle1,
-                          style: Theme.of(context).textTheme.labelMedium,
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                    Text(tOnboardingCounter1, style: Theme.of(context).textTheme.titleMedium,),
-                    SizedBox(height: 50.0,)
-                  ],
-                ),
-              ),
+              onBoardingPage(size: size),
               Container(
                 color: tOnBoardingPage2Color,
               ),
@@ -51,6 +27,44 @@ class OnBoardingScreen extends StatelessWidget {
               ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class onBoardingPage extends StatelessWidget {
+  const onBoardingPage({
+    super.key,
+    required this.size,
+  });
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(tDefaultSize),
+      color: tOnBoardingPage1Color,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          SvgPicture.asset(tOnboardingImage1, height: size.height * 0.5,),    //set height of image to 50% of screen
+          Column(
+            children: [
+              Text(
+                tOnboardingTitle1,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              Text(
+                tOnboardingSubTitle1,
+                style: Theme.of(context).textTheme.labelMedium,
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+          Text(tOnboardingCounter1, style: Theme.of(context).textTheme.titleMedium,),
+          SizedBox(height: 50.0,)
         ],
       ),
     );
