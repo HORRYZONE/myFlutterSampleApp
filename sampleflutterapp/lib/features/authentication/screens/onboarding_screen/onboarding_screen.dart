@@ -7,6 +7,7 @@ import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
 import 'package:sampleflutterapp/features/authentication/models/model_onboarding.dart';
 import 'package:sampleflutterapp/features/authentication/screens/onboarding_screen/onboarding_page_widget.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -44,12 +45,16 @@ class OnBoardingScreen extends StatelessWidget {
             height: size.height),
       ),
     ];
+
+    final controller = LiquidController();
+
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
         children: [
           LiquidSwipe(
             pages: pages,
+            liquidController: controller,
             slideIconWidget: const Icon(Icons.arrow_back_ios),
             enableSideReveal: true,
           ),
@@ -80,7 +85,21 @@ class OnBoardingScreen extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 "Skip",
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall
+                    ?.copyWith(color: Colors.grey),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 10,
+            child: AnimatedSmoothIndicator(
+              activeIndex: controller.currentPage,
+              count: 3,
+              effect: const WormEffect(
+                activeDotColor: lightActionGreen,
+                dotHeight: 5.0,
               ),
             ),
           ),
