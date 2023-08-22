@@ -5,74 +5,34 @@ import 'package:sampleflutterapp/constant/color.dart';
 import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
+import 'package:sampleflutterapp/features/authentication/controllers/onboarding_controller.dart';
 import 'package:sampleflutterapp/features/authentication/models/model_onboarding.dart';
 import 'package:sampleflutterapp/features/authentication/screens/onboarding_screen/onboarding_page_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnBoardingScreen extends StatefulWidget {
+class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({super.key});
 
   @override
-  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
-}
-
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
-  final controller = LiquidController();
-
-  int currentPage = 0;
-
-  @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size; //check screen size
 
-    final pages = [
-      onBoardingPageWidget(
-        model: OnBoardingModel(
-            image: tOnboardingImage1,
-            title: tOnboardingTitle1,
-            subTitle: tOnboardingSubTitle1,
-            counterText: tOnboardingCounter1,
-            bgColor: tOnBoardingPage1Color,
-            height: size.height),
-      ),
-      onBoardingPageWidget(
-        model: OnBoardingModel(
-            image: tOnboardingImage2,
-            title: tOnboardingTitle2,
-            subTitle: tOnboardingSubTitle2,
-            counterText: tOnboardingCounter2,
-            bgColor: tOnBoardingPage2Color,
-            height: size.height),
-      ),
-      onBoardingPageWidget(
-        model: OnBoardingModel(
-            image: tOnboardingImage3,
-            title: tOnboardingTitle3,
-            subTitle: tOnboardingSubTitle3,
-            counterText: tOnboardingCounter3,
-            bgColor: tOnBoardingPage3Color,
-            height: size.height),
-      ),
-    ];
+    final obController = OnboardingController();
 
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
         children: [
           LiquidSwipe(
-            pages: pages,
-            liquidController: controller,
-            onPageChangeCallback: onPageChangeCallback,
+            pages: obController.pages,
+            liquidController: obController.controller,
+            onPageChangeCallback: obController.onPageChangeCallback,
             slideIconWidget: const Icon(Icons.arrow_back_ios),
             enableSideReveal: true,
           ),
           Positioned(
             bottom: 60.0,
             child: OutlinedButton(
-              onPressed: () {
-                int nextPage = controller.currentPage + 1;
-                controller.animateToPage(page: nextPage);
-              },
+              onPressed: () => obController.animateToNextSlide(),
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 side: const BorderSide(color: Colors.black26),
@@ -93,7 +53,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             top: 30,
             right: 20,
             child: TextButton(
-              onPressed: () => controller.jumpToPage(page: 2),
+              onPressed: () => obController.skip(),
               child: Text(
                 "Skip",
                 style: Theme.of(context)
@@ -106,7 +66,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Positioned(
             bottom: 10,
             child: AnimatedSmoothIndicator(
-              activeIndex: controller.currentPage,
+              activeIndex: obController.currentPage.value,
               count: 3,
               effect: const WormEffect(
                 activeDotColor: lightActionGreen,
@@ -119,10 +79,4 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     );
   }
 
-  void onPageChangeCallback(int activePageIndex) {
-    setState(() {
-      currentPage = activePageIndex;
-    });
-    
-  }
 }

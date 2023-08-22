@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,13 +14,18 @@ class onBoardingPageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size; //check screen size
+
     return Container(
       padding: EdgeInsets.all(tDefaultSize),
       color: model.bgColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SvgPicture.asset(model.image, height: model.height * 0.3,),    //set height of image to 50% of screen
+          SvgPicture.asset(
+            model.image,
+            height: size.height * 0.3,
+          ), //set height of image to 50% of screen
           Column(
             children: [
               Text(
@@ -40,8 +43,13 @@ class onBoardingPageWidget extends StatelessWidget {
               ),
             ],
           ),
-          Text(model.counterText, style: Theme.of(context).textTheme.titleMedium,),
-          SizedBox(height: 50.0,)
+          Text(
+            model.counterText,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          SizedBox(
+            height: 50.0,
+          )
         ],
       ),
     );
