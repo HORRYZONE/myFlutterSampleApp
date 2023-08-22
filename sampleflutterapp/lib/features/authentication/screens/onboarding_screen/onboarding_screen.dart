@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:sampleflutterapp/constant/color.dart';
-import 'package:sampleflutterapp/constant/image_strings.dart';
-import 'package:sampleflutterapp/constant/sizes.dart';
-import 'package:sampleflutterapp/constant/text_strings.dart';
 import 'package:sampleflutterapp/features/authentication/controllers/onboarding_controller.dart';
-import 'package:sampleflutterapp/features/authentication/models/model_onboarding.dart';
-import 'package:sampleflutterapp/features/authentication/screens/onboarding_screen/onboarding_page_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -63,14 +58,16 @@ class OnBoardingScreen extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 10,
-            child: AnimatedSmoothIndicator(
-              activeIndex: obController.currentPage.value,
-              count: 3,
-              effect: const WormEffect(
-                activeDotColor: lightActionGreen,
-                dotHeight: 5.0,
+          Obx(
+            () => Positioned(
+              bottom: 10,
+              child: AnimatedSmoothIndicator(
+                activeIndex: obController.currentPage.value,
+                count: 3,
+                effect: const WormEffect(
+                  activeDotColor: lightActionGreen,
+                  dotHeight: 5.0,
+                ),
               ),
             ),
           ),
