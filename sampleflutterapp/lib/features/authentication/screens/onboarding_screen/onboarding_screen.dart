@@ -10,7 +10,10 @@ import 'package:sampleflutterapp/features/authentication/screens/onboarding_scre
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({super.key});
+  OnBoardingScreen({super.key});
+
+  final controller = LiquidController();
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +49,6 @@ class OnBoardingScreen extends StatelessWidget {
       ),
     ];
 
-    final controller = LiquidController();
-
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
@@ -55,6 +56,7 @@ class OnBoardingScreen extends StatelessWidget {
           LiquidSwipe(
             pages: pages,
             liquidController: controller,
+            onPageChangeCallback: onPageChangeCallback,
             slideIconWidget: const Icon(Icons.arrow_back_ios),
             enableSideReveal: true,
           ),
@@ -82,7 +84,7 @@ class OnBoardingScreen extends StatelessWidget {
             top: 30,
             right: 20,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () => controller.jumpToPage(page: 2),
               child: Text(
                 "Skip",
                 style: Theme.of(context)
@@ -106,5 +108,9 @@ class OnBoardingScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void onPageChangeCallback(int activePageIndex) {
+    currentPage = activePageIndex;
   }
 }
