@@ -28,11 +28,15 @@ class onBoardingPageWidget extends StatelessWidget {
               Text(
                 model.title,
                 style: Theme.of(context).textTheme.titleLarge,
-              ),
-              Text(
-                model.subTitle,
-                style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  model.subTitle,
+                  style: Theme.of(context).textTheme.labelMedium,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ],
           ),

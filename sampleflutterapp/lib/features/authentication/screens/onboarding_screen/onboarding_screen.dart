@@ -48,15 +48,7 @@ class OnBoardingScreen extends StatelessWidget {
       body: Stack(
         children: [
           LiquidSwipe(
-            pages: [
-              onBoardingPage(size: size),
-              Container(
-                color: tOnBoardingPage2Color,
-              ),
-              Container(
-                color: tOnBoardingPage3Color,
-              ),
-            ],
+            pages: pages,
           ),
         ],
       ),
