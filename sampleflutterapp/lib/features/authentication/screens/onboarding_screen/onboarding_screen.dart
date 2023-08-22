@@ -5,6 +5,8 @@ import 'package:sampleflutterapp/constant/color.dart';
 import 'package:sampleflutterapp/features/authentication/controllers/onboarding_controller.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+//done!!
+
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({super.key});
 
