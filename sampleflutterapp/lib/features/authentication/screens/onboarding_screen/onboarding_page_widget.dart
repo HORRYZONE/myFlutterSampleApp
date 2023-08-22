@@ -22,7 +22,7 @@ class onBoardingPageWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SvgPicture.asset(model.image, height: model.height * 0.5,),    //set height of image to 50% of screen
+          SvgPicture.asset(model.image, height: model.height * 0.3,),    //set height of image to 50% of screen
           Column(
             children: [
               Text(

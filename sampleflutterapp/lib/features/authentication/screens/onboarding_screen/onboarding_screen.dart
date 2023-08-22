@@ -46,9 +46,43 @@ class OnBoardingScreen extends StatelessWidget {
     ];
     return Scaffold(
       body: Stack(
+        alignment: Alignment.center,
         children: [
           LiquidSwipe(
             pages: pages,
+            slideIconWidget: const Icon(Icons.arrow_back_ios),
+            enableSideReveal: true,
+          ),
+          Positioned(
+            bottom: 60.0,
+            child: OutlinedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                side: const BorderSide(color: Colors.black26),
+                shape: const CircleBorder(),
+                padding: const EdgeInsets.all(20.0),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(20.0),
+                decoration: const BoxDecoration(
+                  color: darkPrimaryColor,
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.arrow_forward_ios),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 30,
+            right: 20,
+            child: TextButton(
+              onPressed: () {},
+              child: Text(
+                "Skip",
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.grey),
+              ),
+            ),
           ),
         ],
       ),
