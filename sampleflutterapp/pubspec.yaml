@@ -56,8 +56,8 @@ dev_dependencies:
 flutter_native_splash:
   color: "#FFFFFF"
   color_dark: "#22292E"
-  image: assets/images/Google__G__Logo.png
-  image_dark: assets/images/Google__G__Logo.png
+  image: assets/images/flutter_logo.png
+  image_dark: assets/images/flutter_logo.png
 
 
 # For information on the generic Dart part of this file, see the
