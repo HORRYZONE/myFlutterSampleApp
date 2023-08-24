@@ -11,4 +11,4 @@ const String tOnboardingImage2 = "assets/images/onboarding/onboarding_02.svg";
 const String tOnboardingImage3 = "assets/images/onboarding/onboarding_03.svg";
 
 // -- Welcome Images --
-const String tWelcomeImage = "assets/images/welcome/welcome_images.svg";
+const String tWelcomeImage = "assets/images/welcome/welcome_image.svg";
