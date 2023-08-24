@@ -29,3 +29,6 @@ const darkActionPurple = Color(0xFF7D6BFF);
 const tOnBoardingPage1Color = lightPrimaryColor;
 const tOnBoardingPage2Color = Color(0xFFC0FDFB);
 const tOnBoardingPage3Color = Color(0xFFF8FDC0);
+
+// -- Welcome Color --
+const tWelcomeBgColor = Color(0xFF63FF93);
