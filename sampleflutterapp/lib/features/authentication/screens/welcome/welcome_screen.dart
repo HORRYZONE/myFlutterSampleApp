@@ -10,11 +10,16 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
+    var mediaQuery = MediaQuery.of(context);
+    var brightness = mediaQuery.platformBrightness;
+    var height = mediaQuery.size.height;
+
+    final isDarkMode = brightness == Brightness.dark;
 
     return Scaffold(
+      backgroundColor: isDarkMode ? darkPrimaryColor : tWelcomeBgColor,
       body: Container(
-        padding: EdgeInsets.all(tDefaultSize),
+        padding: const EdgeInsets.all(tDefaultSize),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -40,27 +45,14 @@ class WelcomePage extends StatelessWidget {
                 Expanded(
                   child: OutlinedButton(
                     onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                      shape: RoundedRectangleBorder(),
-                      foregroundColor: darkPrimaryColor,
-                      side: BorderSide(color: darkPrimaryColor),
-                      padding: EdgeInsets.symmetric(vertical: tButtonHeight),
-                    ),
-                    child: Text(tLogin.toUpperCase(),style: Theme.of(context).textTheme.titleMedium?.copyWith(color: lightTextPrimary)),
+                    child: Text(tLogin.toUpperCase(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
                   ),
                 ),
-                SizedBox(width: 10.0),
+                const SizedBox(width: 10.0),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(),
-                      backgroundColor: darkPrimaryColor,
-                      side: BorderSide(color: darkPrimaryColor),
-                      padding: EdgeInsets.symmetric(vertical: tButtonHeight),
-                    ),
-                    child: Text(tSignup.toUpperCase(),style: Theme.of(context).textTheme.titleMedium?.copyWith(color: darkTextPrimary)),
+                    child: Text(tSignup.toUpperCase(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
                   ),
                 ),
               ],

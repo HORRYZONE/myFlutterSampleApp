@@ -17,7 +17,7 @@ class App extends StatelessWidget {
     return  GetMaterialApp(
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: WelcomePage(),
     );
   }
