@@ -2,8 +2,8 @@
 /* --App Text Strings --*/
 
 // -- common text --
-const String tLogin = "LOGIN";
-const String tSignup = "SIGNUP";
+const String tLogin = "Login";
+const String tSignup = "Signup";
 
 // -- Splash Screen Text --
 const String tAppName = "/SampleProject";
