@@ -4,14 +4,13 @@ import 'package:get/get.dart';
 import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
-import 'package:sampleflutterapp/features/authentication/controllers/splash_screen_controller.dart';
+import 'package:sampleflutterapp/common_widget/fade_in_animation/fade_in_animation_controller.dart';
 
 import '../../../../constant/color.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
 
-  final splashController = Get.put(SplashScreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +19,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Obx(
-            () => AnimatedPositioned(
-              duration: const Duration(milliseconds: 1600),
-              top: splashController.animate.value ? 0 : -30,
-              left: splashController.animate.value ? 0 : -30,
-              child: SvgPicture.asset(tSplashTopIcon),
-            ),
-          ),
+          TFadeInAnimation(splashController: splashController),
           Obx(
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
@@ -83,3 +75,4 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
+
