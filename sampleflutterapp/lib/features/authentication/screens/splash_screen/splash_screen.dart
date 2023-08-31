@@ -13,10 +13,11 @@ import '../../../../constant/color.dart';
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    FadeInAnimationController.find.startAnimation();
+
+    final controller = Get.put(FadeInAnimationController());
+    controller.startSplashAnimation();
 
     return Scaffold(
       body: Stack(
@@ -33,41 +34,47 @@ class SplashScreen extends StatelessWidget {
           ),
           TFadeInAnimation(
             durationInMs: 2000,
-            animate: TAnimatePosition(topBefore: 90, topAfter: 80, leftAfter: tDefaultSize, leftBefore: -80),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        tAppName,
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                      Text(
-                        tAppTagline,
-                        style: Theme.of(context).textTheme.labelLarge,
-                      ),
-                    ],
-                  ),
+            animate: TAnimatePosition(
+                topBefore: 90,
+                topAfter: 80,
+                leftAfter: tDefaultSize,
+                leftBefore: -80),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tAppName,
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
+                Text(
+                  tAppTagline,
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+              ],
+            ),
           ),
           TFadeInAnimation(
-            durationInMs: 2400,
-            animate: TAnimatePosition(bottomBefore: 0, bottomAfter: 100),
-                    child: SvgPicture.asset(tSplashImage)
-                    ),
+              durationInMs: 2400,
+              animate: TAnimatePosition(bottomBefore: 0, bottomAfter: 100),
+              child: SvgPicture.asset(tSplashImage)),
           TFadeInAnimation(
             durationInMs: 2400,
-            animate: TAnimatePosition(bottomBefore: 0, bottomAfter: 60, rightBefore: tDefaultSize, rightAfter: tDefaultSize),
-                child: Container(
-                  width: tSpalashContainerSize,
-                  height: tSpalashContainerSize,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: lightActionGreen,
-                  ),
-                ),
+            animate: TAnimatePosition(
+                bottomBefore: 0,
+                bottomAfter: 60,
+                rightBefore: tDefaultSize,
+                rightAfter: tDefaultSize),
+            child: Container(
+              width: tSpalashContainerSize,
+              height: tSpalashContainerSize,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                color: lightActionGreen,
+              ),
+            ),
           ),
         ],
       ),
     );
   }
 }
-

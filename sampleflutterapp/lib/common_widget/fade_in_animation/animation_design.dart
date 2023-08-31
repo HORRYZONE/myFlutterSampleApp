@@ -32,7 +32,7 @@ class TFadeInAnimation extends StatelessWidget {
         right: controller.animate.value ? animate!.rightAfter : animate!.rightBefore,
         child: AnimatedOpacity(
             duration: Duration(milliseconds: durationInMs),
-            opacity: controller.animate.value ? 0 : -30,
+            opacity: controller.animate.value ? 1 : 0,
             child: child,
             ),
       ),
