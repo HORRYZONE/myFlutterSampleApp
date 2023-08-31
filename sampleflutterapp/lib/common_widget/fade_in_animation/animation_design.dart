@@ -13,11 +13,13 @@ class TFadeInAnimation extends StatelessWidget {
     super.key,
     required this.durationInMs,
     this.animate,
+    required this.child,
   });
 
   final controller = Get.put(FadeInAnimationController());
   final int durationInMs;
   final TAnimatePosition? animate;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,8 @@ class TFadeInAnimation extends StatelessWidget {
         child: AnimatedOpacity(
             duration: Duration(milliseconds: durationInMs),
             opacity: controller.animate.value ? 0 : -30,
-            child: SvgPicture.asset(tSplashTopIcon)),
+            child: child,
+            ),
       ),
     );
   }
