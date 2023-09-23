@@ -8,6 +8,7 @@ import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
 import 'package:sampleflutterapp/features/authentication/screens/login/login_screen.dart';
+import 'package:sampleflutterapp/features/authentication/screens/signup/signup_screen.dart';
 
 import '../../../../common_widget/fade_in_animation/fade_in_animation_controller.dart';
 
@@ -76,7 +77,7 @@ class WelcomePage extends StatelessWidget {
                       const SizedBox(width: 10.0),
                       Expanded(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => Get.to(() => const SignUpScreen()),
                           child: Text(tSignup.toUpperCase(),
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w600)),

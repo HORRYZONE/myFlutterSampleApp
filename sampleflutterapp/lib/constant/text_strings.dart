@@ -36,6 +36,7 @@ const String tSignInWithGithub = "Sign In with GitHub";
 const String tSignUp = " Sign Up";
 
 // -- Login Text --
+const String tUsername = "Username";
 const String tAlreadyHaveAccount = "Already have an account? ";
 const String tContinueWithGoogle = "Continue with Google";
 const String tContinueWithGithub = "Continue with GitHub";

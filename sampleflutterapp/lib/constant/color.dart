@@ -13,7 +13,7 @@ const lightActionYellow = Color(0xFFFDBC54);
 const lightActionRed = Color(0xFFFFE5059);
 const lightActionPurple = Color(0xFFF7B69FD);
 
-// -- Light Theme --
+// -- Dark Theme --
 const darkPrimaryColor = Color(0xFF272727);
 const darkSecondaryColor = Color(0xFF525252);
 

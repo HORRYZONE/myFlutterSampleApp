@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sampleflutterapp/common_widget/form/form_header_widget.dart';
+import 'package:sampleflutterapp/constant/color.dart';
 import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
@@ -16,7 +17,19 @@ class SignUpScreen extends StatelessWidget {
             padding: EdgeInsets.all(tDefaultSize),
             child: Column(
               children: [
-                FormHeaderWidget(image: tLoginImage, title: tLoginTitle)
+                FormHeaderWidget(image: tLoginImage, title: tLoginTitle),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: tFormHeight - 10),
+                  child: Form(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextFormField(
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
