@@ -7,6 +7,7 @@ import 'package:sampleflutterapp/constant/color.dart';
 import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
+import 'package:sampleflutterapp/features/authentication/screens/login/login_screen.dart';
 
 import '../../../../common_widget/fade_in_animation/fade_in_animation_controller.dart';
 
@@ -66,7 +67,7 @@ class WelcomePage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: OutlinedButton(
-                          onPressed: () {},
+                          onPressed: () => Get.to(() => const LoginScreen()),
                           child: Text(tLogin.toUpperCase(),
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w600)),

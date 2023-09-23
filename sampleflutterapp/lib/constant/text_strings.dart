@@ -23,3 +23,14 @@ const String tOnboardingCounter3 = "3/3";
 // -- Welcome Text --
 const String tWelcomeTitle = "Cultivate Your Talents";
 const String tWelcomeSubTitle = "our platform provides a space for you to express yourself, learn, and collaborate.";
+
+// -- Login Text --
+const String tLoginTitle = "/SampleProject";
+const String tRememberMe = "Remember me?";
+const String tDontHaveAccount = "Don't have an account? ";
+const String tEmail = "E-mail";
+const String tPassword = "Password";
+const String tForgotPassword = "Forgot Password ?";
+const String tSignInWithGoogle = "Sign In with Google";
+const String tSignInWithGithub = "Sign In with GitHub";
+const String tSignUp = " Sign Up";

@@ -12,3 +12,8 @@ const String tOnboardingImage3 = "assets/images/onboarding/onboarding_03.svg";
 
 // -- Welcome Images --
 const String tWelcomeImage = "assets/images/welcome/welcome_image.svg";
+
+// -- Login Images --
+const String tLoginImage = "assets/images/login/login_image.svg";
+const String tGoogleImage = "assets/logos/google-logo.svg";
+const String tGithubImage = "assets/logos/github-logo.svg";

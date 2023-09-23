@@ -32,3 +32,6 @@ const tOnBoardingPage3Color = Color(0xFFF8FDC0);
 
 // -- Welcome Color --
 const tWelcomeBgColor = Color(0xFF63FF93);
+
+// -- Login Color --
+const forgotPassColor = Color(0xFF0295FF);
