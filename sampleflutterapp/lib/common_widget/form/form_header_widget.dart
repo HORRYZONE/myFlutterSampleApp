@@ -3,18 +3,22 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
 
-class LoginHeaderWidget extends StatelessWidget {
-  const LoginHeaderWidget({
+class FormHeaderWidget extends StatelessWidget {
+  const FormHeaderWidget({
+    required this.image,
+    required this.title,
     super.key,
   });
+
+  final String image, title;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SvgPicture.asset(tLoginImage),
+        SvgPicture.asset(image),
         Text(
-          tLoginTitle,
+          title,
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ],

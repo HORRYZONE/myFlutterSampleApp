@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
+import 'package:sampleflutterapp/features/authentication/screens/welcome/welcome_screen.dart';
 
 import '../../../constant/color.dart';
 import '../../../constant/image_strings.dart';
@@ -47,5 +48,8 @@ class OnboardingController extends GetxController {
   animateToNextSlide() {
     int nextPage = controller.currentPage + 1;
     controller.animateToPage(page: nextPage);
+    if (nextPage == 3) {
+      Get.to(() => const WelcomePage());
+    }
   }
 }

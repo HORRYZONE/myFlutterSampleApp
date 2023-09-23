@@ -7,7 +7,7 @@ import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
 import 'package:sampleflutterapp/features/authentication/screens/login/login_footer_widget.dart';
 import 'package:sampleflutterapp/features/authentication/screens/login/login_form_widget.dart';
-import 'package:sampleflutterapp/features/authentication/screens/login/login_header_widget.dart';
+import 'package:sampleflutterapp/common_widget/form/form_header_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /*-- Section 01 --*/
-                  LoginHeaderWidget(),
+                  FormHeaderWidget(image: tLoginImage, title: tLoginTitle,),
                   /*-- End --*/
 
                   /*-- Section 02 [form] --*/

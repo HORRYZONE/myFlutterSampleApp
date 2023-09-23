@@ -34,3 +34,9 @@ const String tForgotPassword = "Forgot Password ?";
 const String tSignInWithGoogle = "Sign In with Google";
 const String tSignInWithGithub = "Sign In with GitHub";
 const String tSignUp = " Sign Up";
+
+// -- Login Text --
+const String tAlreadyHaveAccount = "Already have an account? ";
+const String tContinueWithGoogle = "Continue with Google";
+const String tContinueWithGithub = "Continue with GitHub";
+const String tLogIn = "Login";
