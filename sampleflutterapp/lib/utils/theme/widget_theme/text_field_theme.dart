@@ -7,7 +7,7 @@ class TTextFormFieldTheme {
   static InputDecorationTheme lightInputDecorationTheme = const InputDecorationTheme(
     border: OutlineInputBorder(),
     prefixIconColor: lightTextPrimary,
-    floatingLabelStyle: TextStyle(color: lightPrimaryColor),
+    floatingLabelStyle: TextStyle(color: lightTextPrimary),
     focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(width: 2.0, color: lightTextPrimary),
     ),

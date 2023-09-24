@@ -37,6 +37,7 @@ const String tSignUp = " Sign Up";
 
 // -- Login Text --
 const String tUsername = "Username";
+const String tPhoneNumber = "Phone No";
 const String tAlreadyHaveAccount = "Already have an account? ";
 const String tContinueWithGoogle = "Continue with Google";
 const String tContinueWithGithub = "Continue with GitHub";

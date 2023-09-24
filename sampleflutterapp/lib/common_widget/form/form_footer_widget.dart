@@ -6,10 +6,15 @@ import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
 
-class LoginFooterWidget extends StatelessWidget {
-  const LoginFooterWidget({
+class FormFooterWidget extends StatelessWidget {
+  const FormFooterWidget({
+    
+    required this.account,
+    required this.otherPage,
     super.key,
   });
+
+    final String account, otherPage;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +71,7 @@ class LoginFooterWidget extends StatelessWidget {
           onPressed: () {},
           child: Text.rich(
             TextSpan(
-                text: tDontHaveAccount,
+                text: account,
                 style: GoogleFonts.poppins(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
@@ -74,7 +79,7 @@ class LoginFooterWidget extends StatelessWidget {
                 ),
                 children: [
                   TextSpan(
-                    text: tSignUp,
+                    text: otherPage,
                     style: GoogleFonts.poppins(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

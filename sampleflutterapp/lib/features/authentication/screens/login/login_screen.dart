@@ -5,7 +5,7 @@ import 'package:sampleflutterapp/constant/color.dart';
 import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
-import 'package:sampleflutterapp/features/authentication/screens/login/login_footer_widget.dart';
+import 'package:sampleflutterapp/common_widget/form/form_footer_widget.dart';
 import 'package:sampleflutterapp/features/authentication/screens/login/login_form_widget.dart';
 import 'package:sampleflutterapp/common_widget/form/form_header_widget.dart';
 
@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                   /*-- End --*/
 
                   /*-- Section 03 [alt login] --*/
-                  LoginFooterWidget(),
+                  FormFooterWidget(account: tDontHaveAccount, otherPage: tSignUp,),
                   /*-- End --*/
                 ],
               ),

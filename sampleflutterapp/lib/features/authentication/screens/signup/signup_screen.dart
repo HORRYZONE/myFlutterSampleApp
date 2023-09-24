@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sampleflutterapp/common_widget/form/form_footer_widget.dart';
 import 'package:sampleflutterapp/common_widget/form/form_header_widget.dart';
 import 'package:sampleflutterapp/constant/color.dart';
 import 'package:sampleflutterapp/constant/image_strings.dart';
 import 'package:sampleflutterapp/constant/sizes.dart';
 import 'package:sampleflutterapp/constant/text_strings.dart';
+import 'package:sampleflutterapp/features/authentication/screens/signup/signup_form_widget.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -14,22 +16,12 @@ class SignUpScreen extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.all(tDefaultSize),
-            child: Column(
+            padding: const EdgeInsets.all(tDefaultSize),
+            child: const Column(
               children: [
                 FormHeaderWidget(image: tLoginImage, title: tLoginTitle),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: tFormHeight - 10),
-                  child: Form(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        TextFormField(
-                        )
-                      ],
-                    ),
-                  ),
-                )
+                SignUpFormWidget(),
+                FormFooterWidget(account: tAlreadyHaveAccount, otherPage: tLogIn),
               ],
             ),
           ),
@@ -38,3 +30,5 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
+
+
